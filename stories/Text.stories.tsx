@@ -117,7 +117,7 @@ export const Head0: Story = {
   args: {
     t: 'h0',
     as: 'h1',
-    children: '빈티지 샵을 다 모았다! 빙글',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -216,7 +216,7 @@ export const Body3: Story = {
   args: {
     t: 'b3',
     as: 'p',
-    children: '빈티지 삶을 다 모았다! 빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -225,7 +225,7 @@ export const Label1: Story = {
   args: {
     t: 'l1',
     as: 'label',
-    children: '빈티지 삽을 다 모았다! 빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -233,7 +233,7 @@ export const Label2: Story = {
   args: {
     t: 'l2',
     as: 'label',
-    children: '빈티지 삽을 다 모있다! 빙글 Vingle',
+    children: '빈티지 샵을 다 모있다! 빙글 Vingle',
   },
 };
 
@@ -241,7 +241,7 @@ export const Label3: Story = {
   args: {
     t: 'l3',
     as: 'label',
-    children: '빈티지 삽을 다 모았다! 빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -249,7 +249,7 @@ export const Label4: Story = {
   args: {
     t: 'l4',
     as: 'label',
-    children: '빈티지 삽을 나 모았빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -258,7 +258,7 @@ export const Caption1: Story = {
   args: {
     t: 'c1',
     as: 'small',
-    children: '반니지 산을 나고있었나 빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -266,7 +266,7 @@ export const Caption2: Story = {
   args: {
     t: 'c2',
     as: 'small',
-    children: '온 시선을 모아 빙글 Vingle',
+    children: '빈티지 샵을 다 모았다! 빙글 Vingle',
   },
 };
 
@@ -284,7 +284,7 @@ export const AllTypography: Story = {
       <div>
         <h3 style={{ marginBottom: '8px', color: '#666' }}>Head</h3>
         <Text t="h0" as="h1">
-          빈티지 샵을 다 모았다! 빙글
+          빈티지 샵을 다 모았다! 빙글 Vingle
         </Text>
         <Text t="h1" as="h1">
           빈티지 샵을 다 모았다! 빙글 Vingle
