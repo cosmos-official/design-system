@@ -15,6 +15,15 @@
     // "types": ["node"],
     // and npm install -D @types/node
 
+    // Path mapping for absolute imports
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/components/*": ["./packages/components/*"],
+      "@/styles/*": ["./packages/styles/*"],
+      "@/stories/*": ["./stories/*"]
+    },
+
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
