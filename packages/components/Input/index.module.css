@@ -1,0 +1,37 @@
+/* FIXME: postCSS가 적용되지않음.. color를 전역적으로 사용하고 싶은데, 추후 살펴보기 */
+@import '../../styles/color.css';
+
+.designSystemInput {
+  padding: 6px 10px;
+  border-radius: 2px;
+  color: var(--vingle-black);
+  border: 1.2px solid var(--vingle-gray-400);
+}
+
+.designSystemInput:focus {
+  outline: 1.2px solid var(--vingle-purple);
+}
+
+.designSystemInput:disabled {
+  background-color: var(--vingle-gray-50);
+  color: var(--vingle-gray-900);
+  cursor: not-allowed;
+}
+
+.designSystemInput:read-only {
+  background-color: var(--vingle-gray-50);
+  color: var(--vingle-gray-500);
+}
+
+.designSystemInput:focus-visible {
+  outline: 1.2px solid var(--vingle-purple);
+}
+
+.designSystemInput:hover:not(:focus, :focus-visible, :disabled, :read-only) {
+  border: 1.2px solid var(--vingle-gray-900);
+}
+
+.designSystemInput::placeholder {
+  color: var(--vingle-gray-300);
+  user-select: none;
+}
