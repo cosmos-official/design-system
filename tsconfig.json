@@ -1,5 +1,14 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.cjs",
+    "**/*.css"
+  ],
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
@@ -10,6 +19,9 @@
     "module": "NodeNext",
     "target": "esnext",
     "types": ["node"],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],

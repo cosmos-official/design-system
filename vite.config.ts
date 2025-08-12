@@ -20,6 +20,9 @@ export default defineConfig({
       '@/stories': path.resolve(__dirname, './stories'),
     },
   },
+  css: {
+    postcss: './postcss.config.ts',
+  },
   build: {
     lib: {
       entry: './packages/index.ts',
