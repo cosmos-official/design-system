@@ -355,10 +355,7 @@ export const AllInputTypes: Story = {
 export const InputStates: Story = {
   render: () => (
     <div className="input-container">
-      <div className="input-group">
-        <label className="input-label">기본 상태</label>
-        <Input value="" placeholder="기본 입력창" />
-      </div>
+      <InputStory />
 
       <div className="input-group">
         <label className="input-label">값이 있는 상태</label>

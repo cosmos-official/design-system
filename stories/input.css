@@ -19,84 +19,6 @@
   color: #333;
 }
 
-.input-field {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  font-family: 'Pretendard', sans-serif;
-  transition: border-color 0.2s ease;
-}
-
-.input-field:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-.input-field:disabled {
-  background-color: #f5f5f5;
-  color: #999;
-  cursor: not-allowed;
-}
-
-.input-field:read-only {
-  background-color: #f9f9f9;
-  cursor: default;
-}
-
-.input-field::placeholder {
-  color: #999;
-}
-
-/* Input 타입별 스타일 */
-.input-field[type='search'] {
-  padding-left: 32px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 8px center;
-  background-size: 16px;
-}
-
-.input-field[type='password'] {
-  letter-spacing: 2px;
-}
-
-.input-field[type='number'] {
-  text-align: right;
-}
-
-/* Input 상태별 스타일 */
-.input-field.error {
-  border-color: #dc3545;
-}
-
-.input-field.error:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
-}
-
-.input-field.success {
-  border-color: #28a745;
-}
-
-.input-field.success:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
-}
-
-/* Input 크기별 스타일 */
-.input-field.small {
-  padding: 4px 8px;
-  font-size: 12px;
-}
-
-.input-field.large {
-  padding: 12px 16px;
-  font-size: 16px;
-}
-
 /* Input 그룹 스타일 */
 .input-group-row {
   display: flex;
@@ -106,12 +28,6 @@
 
 .input-group-row .input-group {
   flex: 1;
-}
-
-/* Input 접근성 개선 */
-.input-field:focus-visible {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
 }
 
 /* 다크 모드 지원 */
