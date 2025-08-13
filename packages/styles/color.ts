@@ -22,6 +22,18 @@ const color = {
     '800': '#3E3E45',
     '900': '#303037',
   },
+  positive: {
+    '500': '#00BF40',
+    '100': '#E4FFED',
+  },
+  caution: {
+    '500': '#FF9200',
+    '100': '#FFF426',
+  },
+  warning: {
+    '500': '#FF2424',
+    '100': '#FFEFEF',
+  },
 };
 
 export default color;
