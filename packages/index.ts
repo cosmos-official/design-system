@@ -1,3 +1,3 @@
-import { Input, Text } from './components';
+import { Input, Text, TextArea } from './components';
 
-export { Input, Text };
+export { Input, Text, TextArea };

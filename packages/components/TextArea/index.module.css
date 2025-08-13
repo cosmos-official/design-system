@@ -1,0 +1,36 @@
+/* FIXME: postCSS가 적용되지않음.. color를 전역적으로 사용하고 싶은데, 추후 살펴보기 */
+@import '../../styles/color.css';
+
+.designSystemTextarea {
+  padding: 6px 10px;
+  border-radius: 2px;
+  color: var(--vingle-black);
+  border: 1.2px solid var(--vingle-gray-400);
+}
+
+.designSystemTextarea:focus {
+  outline: 1.2px solid var(--vingle-purple);
+}
+
+.designSystemTextarea:disabled {
+  background-color: var(--vingle-gray-50);
+  color: var(--vingle-gray-900);
+  cursor: not-allowed;
+}
+
+.designSystemTextarea:read-only {
+  background-color: var(--vingle-gray-50);
+  color: var(--vingle-gray-500);
+}
+
+.designSystemTextarea:focus-visible {
+  outline: 1.2px solid var(--vingle-purple);
+}
+
+.designSystemTextarea:hover:not(:focus, :focus-visible, :disabled, :read-only) {
+  border: 1.2px solid var(--vingle-gray-900);
+}
+
+.designSystemTextarea::placeholder {
+  color: var(--vingle-gray-300);
+}
