@@ -20,8 +20,8 @@ interface TextProps {
   as?: keyof Pick<JSX.IntrinsicElements, TextElement>;
   children: React.ReactNode;
   t?: TypoKey;
-  className?: string;
   style?: React.CSSProperties;
+  className?: string;
 }
 
 export default function Text({
@@ -29,6 +29,7 @@ export default function Text({
   as = 'span',
   t = 'b1',
   style = {},
+  className,
   ...props
 }: TextProps) {
   const Component = as;
@@ -38,6 +39,7 @@ export default function Text({
         ...typo[t],
         ...style,
       }}
+      className={className}
       {...props}
     >
       {children}

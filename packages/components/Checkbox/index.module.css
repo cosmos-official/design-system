@@ -1,0 +1,57 @@
+@import '../../styles/color.css';
+
+.container {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.hiddenInput {
+  appearance: none;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.labelText {
+  color: var(--vingle-gray-700);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.iconUnchecked {
+  composes: iconContainer;
+  border: 2px solid var(--vingle-gray-300);
+}
+
+.iconChecked {
+  composes: iconContainer;
+  background-color: var(--vingle-gray-900);
+  border: 2px solid var(--vingle-gray-900);
+}
+
+.iconDisabled {
+  composes: iconContainer;
+  background-color: var(--vingle-gray-100);
+  border: 2px solid var(--vingle-gray-300);
+}
+
+.iconFixed {
+  composes: iconContainer;
+  background-color: var(--vingle-gray-200);
+  border: 2px solid var(--vingle-gray-400);
+}

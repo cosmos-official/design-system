@@ -1,11 +1,18 @@
 import { InputHTMLAttributes } from 'react';
 import classes from './index.module.css';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   value: string;
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'search';
 }
-export default function Input({ value, ...props }: InputProps) {
+export default function Input({ value, type, ...props }: InputProps) {
   return (
-    <input className={classes.designSystemInput} value={value} {...props} />
+    <input
+      className={classes.designSystemInput}
+      type={type}
+      value={value}
+      {...props}
+    />
   );
 }
