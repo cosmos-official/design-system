@@ -13,7 +13,6 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-vitest',
     '@storybook/addon-postcss',
-    '@storybook/addon-actions',
     {
       name: '@storybook/addon-postcss',
       options: {
