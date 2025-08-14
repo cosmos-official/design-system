@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextareaHTMLAttributes, useState } from 'react';
+import { useState } from 'react';
 import './textarea.css';
-import { TextArea } from '@/packages';
+import { Text, TextArea } from '@/packages';
+import { TextAreaProps } from '@/packages/components/TextArea';
 
-interface TextAreaStoryProps
-  extends Omit<
-    TextareaHTMLAttributes<HTMLTextAreaElement>,
-    'onChange' | 'value'
-  > {
+interface TextAreaStoryProps extends Omit<TextAreaProps, 'onChange'> {
   label?: string;
   initialValue?: string;
 }
@@ -24,7 +21,11 @@ const TextAreaStory = ({
   return (
     <div className="textarea-container">
       <div className="textarea-group">
-        {label && <label className="textarea-label">{label}</label>}
+        {label && (
+          <Text as="label" t="b1">
+            {label}
+          </Text>
+        )}
         <TextArea value={value} onChange={handleChange} {...props} />
       </div>
     </div>
@@ -141,24 +142,32 @@ type Story = StoryObj<typeof meta>;
 
 // 기본 TextArea 스토리
 export const Default: Story = {
-  render: () => <TextAreaStory placeholder="내용을 입력하세요" />,
+  args: {
+    placeholder: '내용을 입력하세요',
+  },
+  render: (args) => <TextAreaStory {...args} />,
 };
 
 // 값이 있는 TextArea
 export const WithValue: Story = {
-  render: () => (
+  args: {
+    placeholder: '내용을 입력하세요',
+  },
+  render: (args) => (
     <TextAreaStory
-      placeholder="내용을 입력하세요"
       initialValue="빙글 Vingle 디자인 시스템의 TextArea 컴포넌트입니다. 여러 줄의 텍스트를 입력할 수 있습니다."
+      {...args}
     />
   ),
 };
 
 // 긴 텍스트 TextArea
 export const LongText: Story = {
-  render: () => (
+  args: {
+    placeholder: '긴 텍스트를 입력하세요',
+  },
+  render: (args) => (
     <TextAreaStory
-      placeholder="긴 텍스트를 입력하세요"
       initialValue={`빙글 Vingle 디자인 시스템은 사용자 경험을 최우선으로 하는 컴포넌트 라이브러리입니다.
 
 주요 특징:
@@ -169,58 +178,28 @@ export const LongText: Story = {
 
 이 TextArea 컴포넌트는 여러 줄의 텍스트를 입력할 때 사용됩니다.`}
       rows={8}
+      {...args}
     />
   ),
-};
-
-// 크기별 TextArea
-export const Sizes: Story = {
-  render: () => (
-    <div className="textarea-container">
-      <div className="textarea-group">
-        <label className="textarea-label">작은 크기 (3행)</label>
-        <TextArea placeholder="작은 텍스트 영역" rows={3} cols={30} />
-      </div>
-
-      <div className="textarea-group">
-        <label className="textarea-label">중간 크기 (5행)</label>
-        <TextArea placeholder="중간 텍스트 영역" rows={5} cols={50} />
-      </div>
-
-      <div className="textarea-group">
-        <label className="textarea-label">큰 크기 (8행)</label>
-        <TextArea placeholder="큰 텍스트 영역" rows={8} cols={70} />
-      </div>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: '다양한 크기의 TextArea를 확인할 수 있습니다.',
-      },
-    },
-  },
 };
 
 // 비활성화된 TextArea
 export const Disabled: Story = {
-  render: () => (
-    <TextAreaStory
-      placeholder="비활성화된 텍스트 영역"
-      initialValue="이 텍스트는 수정할 수 없습니다."
-      disabled
-    />
-  ),
+  args: {
+    placeholder: '비활성화된 텍스트 영역',
+    disabled: true,
+  },
+  render: (args) => <TextAreaStory {...args} />,
 };
 
 // 읽기 전용 TextArea
 export const ReadOnly: Story = {
-  render: () => (
-    <TextAreaStory
-      placeholder="읽기 전용 텍스트 영역"
-      initialValue="이 텍스트는 읽기 전용입니다."
-      readOnly
-    />
+  args: {
+    placeholder: '읽기 전용 텍스트 영역',
+    readOnly: true,
+  },
+  render: (args) => (
+    <TextAreaStory initialValue="이 텍스트는 읽기 전용입니다." {...args} />
   ),
 };
 
@@ -406,7 +385,6 @@ export const FormValidationExample: Story = {
             placeholder="상품에 대한 자세한 설명을 입력하세요 (10-500자)"
             rows={5}
             maxLength={500}
-            className={errors.description ? 'error' : ''}
           />
           {errors.description && (
             <p style={{ marginTop: '4px', fontSize: '12px', color: '#dc3545' }}>

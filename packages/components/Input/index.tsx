@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 import classes from './index.module.css';
 
-interface InputProps
+export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   value: string;
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'search';

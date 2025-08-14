@@ -1,22 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { InputHTMLAttributes, useState } from 'react';
+import { useState } from 'react';
 import { Input } from '../packages';
 import './input.css';
+import { type InputProps } from '@/packages/components/Input';
 
-interface InputStoryProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    'onChange' | 'value' | 'type' | 'placeholder'
-  > {
+interface InputStoryProps extends Omit<InputProps, 'value'> {
   label?: string;
   initialValue?: string;
-  type?: string;
-  placeholder?: string;
 }
 const InputStory = ({
-  type,
   label,
-  placeholder,
   initialValue = '',
   ...props
 }: InputStoryProps) => {
@@ -28,13 +21,7 @@ const InputStory = ({
     <div className="input-container">
       <div className="input-group">
         <label className="input-label">{label}</label>
-        <Input
-          type={type}
-          value={value}
-          placeholder={placeholder}
-          onChange={handleChange}
-          {...props}
-        />
+        <Input value={value} onChange={handleChange} {...props} />
       </div>
     </div>
   );
@@ -61,30 +48,19 @@ VINGLE 디자인 시스템의 Input 컴포넌트입니다. HTML input 요소의 
 ## 사용법
 
 \`\`\`tsx
-import Input from '@vingle/design-system/Input';
-
-// 기본 사용법
-<Input value="입력값" onChange={(e) => console.log(e.target.value)} />
-
-// placeholder와 함께 사용
-<Input 
-  value="" 
-  placeholder="검색어를 입력하세요" 
-  onChange={(e) => setValue(e.target.value)} 
-/>
-
-// 다양한 input 타입
-<Input type="email" value={email} placeholder="이메일을 입력하세요" />
-<Input type="password" value={password} placeholder="비밀번호를 입력하세요" />
-<Input type="number" value={age} placeholder="나이를 입력하세요" />
+<Input value="입력값" onChange={onChange} />
+<Input  value={value} placeholder="검색어를 입력하세요" onChange={onChange} />
+<Input type="email" value={email} placeholder="이메일을 입력하세요" onChange={onChange}  />
+<Input type="password" value={password} placeholder="비밀번호를 입력하세요" onChange={onChange}  />
+<Input type="number" value={age} placeholder="나이를 입력하세요" onChange={onChange}  />
 \`\`\`
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| value | string | - | input의 값 (필수) |
-| type | string | 'text' | input 타입 (text, email, password, number 등) |
+| value | string | - | input의 입력값 (필수) |
+| type | string | 'text' | textual form input (text, email, password, number 등) |
 | placeholder | string | - | placeholder 텍스트 |
 | disabled | boolean | false | 비활성화 여부 |
 | required | boolean | false | 필수 입력 여부 |
@@ -145,124 +121,130 @@ type Story = StoryObj<typeof meta>;
 
 // 기본 Input 스토리
 export const Default: Story = {
-  render: () => <InputStory placeholder="텍스트를 입력하세요" />,
-};
-
-// 값이 있는 Input
-export const WithValue: Story = {
-  render: () => (
-    <InputStory placeholder="텍스트를 입력하세요" initialValue="빙글 Vingle" />
-  ),
+  render: (args) => <InputStory placeholder="텍스트를 입력하세요" {...args} />,
 };
 
 // 이메일 Input
 export const Email: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="email"
       placeholder="이메일을 입력하세요"
       initialValue="user@vingle.com"
+      {...args}
     />
   ),
 };
 
 // 비밀번호 Input
 export const Password: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="password"
       placeholder="비밀번호를 입력하세요"
       initialValue="password123"
+      {...args}
     />
   ),
 };
 
 // 숫자 Input
 export const Number: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="number"
       placeholder="숫자를 입력하세요"
       initialValue="25"
       min={0}
       max={100}
+      {...args}
     />
   ),
 };
 
 // 검색 Input
 export const Search: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="search"
       placeholder="검색어를 입력하세요"
       initialValue="검색어"
+      {...args}
     />
   ),
 };
 
 // 전화번호 Input
 export const Telephone: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="tel"
       placeholder="전화번호를 입력하세요"
       initialValue="010-1234-5678"
       pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+      {...args}
     />
   ),
 };
 
 // URL Input
 export const URL: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       type="url"
       placeholder="URL을 입력하세요"
       initialValue="https://vingle.com"
+      {...args}
     />
   ),
 };
 
 // 비활성화된 Input
 export const Disabled: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       placeholder="비활성화된 입력창"
       initialValue="비활성화된 입력값"
       disabled
+      {...args}
     />
   ),
 };
 
 // 읽기 전용 Input
 export const ReadOnly: Story = {
-  render: () => <InputStory initialValue="읽기 전용 입력값" readOnly />,
+  render: (args) => (
+    <InputStory initialValue="읽기 전용 입력값" readOnly {...args} />
+  ),
 };
 
 // 필수 입력 Input
 export const Required: Story = {
-  render: () => <InputStory placeholder="필수 입력 항목입니다" required />,
+  render: (args) => (
+    <InputStory placeholder="필수 입력 항목입니다" required {...args} />
+  ),
 };
 
 // 최대 길이 제한 Input
 export const WithMaxLength: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       initialValue="최대 10자"
       maxLength={10}
       placeholder="최대 10자까지 입력 가능"
+      {...args}
     />
   ),
 };
 
 // 최소 길이 제한 Input
 export const WithMinLength: Story = {
-  render: () => (
+  render: (args) => (
     <InputStory
       initialValue=""
       minLength={5}
       placeholder="최소 5자 이상 입력해주세요"
+      {...args}
     />
   ),
 };

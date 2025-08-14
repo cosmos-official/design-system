@@ -1,20 +1,3 @@
-/* Pretendard 폰트 import */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
-
-/* 기본 폰트 설정 */
-body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
-    Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
-    'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    sans-serif;
-}
-
-/* Text 컴포넌트 기본 스타일 */
-.text-component {
-  margin: 0;
-  padding: 0;
-}
-
 /* 타이포그래피 스케일별 색상 구분을 위한 스타일 */
 .typography-scale {
   display: flex;

@@ -1,7 +1,23 @@
 /* FIXME: postCSS가 적용되지않음.. color를 전역적으로 사용하고 싶은데, 추후 살펴보기 */
 @import '../../styles/color.css';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 
 .designSystemTextarea {
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
   padding: 6px 10px;
   border-radius: 2px;
   color: var(--vingle-black);

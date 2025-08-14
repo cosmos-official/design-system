@@ -1,0 +1,6 @@
+.textarea-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}

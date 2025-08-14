@@ -1,6 +1,8 @@
 import React, { JSX } from 'react';
 import { typo, TypoKey } from './typo';
 import { colorMap } from '@/packages/styles';
+import { cmerge } from '@/packages/utils';
+import classes from './index.module.css';
 
 type TextElement =
   | 'h1'
@@ -37,6 +39,7 @@ export default function Text({
 }: TextProps) {
   const Component = as;
   const colorStyle = color ? { color: colorMap[color] } : {};
+  console.log(classes.textComponent);
   return (
     <Component
       style={{
@@ -44,7 +47,7 @@ export default function Text({
         ...style,
         ...colorStyle,
       }}
-      className={className}
+      className={cmerge(className, classes.textComponent)}
       {...props}
     >
       {children}
