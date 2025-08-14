@@ -33,7 +33,8 @@
       "@/*": ["./*"],
       "@/components/*": ["./packages/components/*"],
       "@/styles/*": ["./packages/styles/*"],
-      "@/stories/*": ["./stories/*"]
+      "@/stories/*": ["./stories/*"],
+      "@/utils/*": ["./packages/utils/*"]
     },
 
     // Other Outputs
