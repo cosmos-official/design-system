@@ -1,0 +1,18 @@
+.baseStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.primaryBlack {
+  composes: baseStyle;
+  background-color: var(--vingle-gray-900);
+  color: white;
+}
+
+.primaryWhite {
+  composes: baseStyle;
+  background-color: white;
+  color: var(--vingle-gray-600);
+  border: 1px solid var(--vingle-gray-600);
+}
