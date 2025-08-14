@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hiddenInput {
+  appearance: none;
+  position: absolute;
+  visibility: hidden;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.iconUnselected {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  border: 2px solid var(--vingle-gray-300);
+}
+
+.iconSelected {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 5px solid var(--vingle-gray-900);
+}
+
+.iconDisabled {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  border: 2px solid var(--vingle-gray-300);
+  background-color: var(--vingle-gray-100);
+}
+
+.iconFixed {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 5px solid var(--vingle-gray-400);
+}
