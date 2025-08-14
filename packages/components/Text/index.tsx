@@ -1,5 +1,6 @@
 import React, { JSX } from 'react';
 import { typo, TypoKey } from './typo';
+import { colorMap } from '@/packages/styles';
 
 type TextElement =
   | 'h1'
@@ -21,6 +22,7 @@ interface TextProps {
   children: React.ReactNode;
   t?: TypoKey;
   style?: React.CSSProperties;
+  color?: keyof typeof colorMap;
   className?: string;
 }
 
@@ -30,14 +32,17 @@ export default function Text({
   t = 'b1',
   style = {},
   className,
+  color,
   ...props
 }: TextProps) {
   const Component = as;
+  const colorStyle = color ? { color: colorMap[color] } : {};
   return (
     <Component
       style={{
         ...typo[t],
         ...style,
+        ...colorStyle,
       }}
       className={className}
       {...props}
