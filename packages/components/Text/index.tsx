@@ -39,7 +39,7 @@ export default function Text({
 }: TextProps) {
   const Component = as;
   const colorStyle = color ? { color: colorMap[color] } : {};
-  console.log(classes.textComponent);
+
   return (
     <Component
       style={{
