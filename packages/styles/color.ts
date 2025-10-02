@@ -7,7 +7,7 @@ export const color = {
   purple: {
     '10': '#F9E7FF',
     '30': '#F5D3FF',
-    '50': '#EDB0FF',
+    '50': '#D584ED',
     '70': '#E07BFF',
   },
   gray: {
@@ -34,6 +34,7 @@ export const color = {
     '500': '#FF2424',
     '100': '#FFEFEF',
   },
+  white: '#ffffff',
 };
 
 export const colorMap = {
@@ -59,4 +60,5 @@ export const colorMap = {
   caution100: color.caution['100'],
   warning500: color.warning['500'],
   warning100: color.warning['100'],
+  white: '#FFFFFF',
 };
