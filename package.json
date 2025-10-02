@@ -1,6 +1,6 @@
 {
   "name": "@vingle-team/design-system",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vingle Design System for Product Register Solution",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
