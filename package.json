@@ -12,8 +12,12 @@
       "types": "./dist/index.d.ts"
     },
     "./styles": {
-      "import": "./dist/styles/index.css",
-      "require": "./dist/styles/index.css"
+      "import": "./dist/styles/design-system.css",
+      "require": "./dist/styles/design-system.css"
+    },
+    "./color": {
+      "import": "./dist/styles/color.css",
+      "require": "./dist/styles/color.css"
     }
   },
   "files": [
