@@ -38,7 +38,7 @@ export default function Text({
   ...props
 }: TextProps) {
   const Component = as;
-  const colorStyle = color ? { color: colorMap[color] } : {};
+  const colorStyle = color ? { color: colorMap[color] } : { color };
 
   return (
     <Component
