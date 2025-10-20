@@ -38,14 +38,14 @@ export default function Text({
   ...props
 }: TextProps) {
   const Component = as;
-  const colorStyle = color ? { color: colorMap[color] } : { color };
+  const colorStyle = color ? { color: colorMap[color] } : {};
 
   return (
     <Component
       style={{
         ...typo[t],
-        ...style,
         ...colorStyle,
+        ...style,
       }}
       className={cmerge(className, classes.textComponent)}
       {...props}

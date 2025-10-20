@@ -51,13 +51,13 @@ export const typo: Record<TypoKey, CSSProperties> = {
     fontSize: 16,
     lineHeight: lineHeight.normal,
     letterSpacing: letterSpacing.tight,
-    fontWeight: weight.bold,
+    fontWeight: weight.semibold,
   },
   t2: {
     fontSize: 16,
     lineHeight: lineHeight.normal,
     letterSpacing: letterSpacing.tight,
-    fontWeight: weight.semibold,
+    fontWeight: weight.medium,
   },
   t3: {
     fontSize: 16,
@@ -87,13 +87,13 @@ export const typo: Record<TypoKey, CSSProperties> = {
     fontSize: 14,
     lineHeight: lineHeight.normal,
     letterSpacing: letterSpacing.normal,
-    fontWeight: weight.bold,
+    fontWeight: weight.semibold,
   },
   b2: {
     fontSize: 14,
     lineHeight: lineHeight.normal,
     letterSpacing: letterSpacing.normal,
-    fontWeight: weight.semibold,
+    fontWeight: weight.medium,
   },
   b3: {
     fontSize: 14,
